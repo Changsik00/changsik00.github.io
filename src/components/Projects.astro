@@ -3,9 +3,9 @@ const live = [
   {
     name: 'Signal.bz',
     url: 'https://www.signal.bz',
-    description: '토이 프로젝트로 시작해 현재 운영 중인 서비스. React / NestJS / MongoDB 기반으로 직접 기획·개발·운영하고 있습니다.',
+    description: '2022년 개발 완료 후 무중단으로 안정 운영 중. 현재는 서버 모니터링만 수행하는 상태로, 별도 유지보수 없이 자체적으로 잘 돌아가고 있습니다.',
     stack: ['React', 'NestJS', 'MongoDB', 'TailwindCSS'],
-    status: 'live',
+    status: 'stable',
   },
   {
     name: 'Teambinder.ai',
@@ -61,8 +61,16 @@ const recent = [
           <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
             <h3 style="font-size: 1rem; font-weight: 700; color: var(--text);">{p.name}</h3>
             <div style="display: flex; align-items: center; gap: 0.4rem;">
-              <span style="width: 0.5rem; height: 0.5rem; border-radius: 50%; background: #22c55e; animation: blink 2s ease infinite;"></span>
-              <span style="font-size: 0.72rem; color: #22c55e;">live</span>
+              {p.status === 'stable'
+                ? <>
+                    <span style="width: 0.5rem; height: 0.5rem; border-radius: 50%; background: #7aa2f7;"></span>
+                    <span style="font-size: 0.72rem; color: #7aa2f7;">stable</span>
+                  </>
+                : <>
+                    <span style="width: 0.5rem; height: 0.5rem; border-radius: 50%; background: #22c55e; animation: blink 2s ease infinite;"></span>
+                    <span style="font-size: 0.72rem; color: #22c55e;">live</span>
+                  </>
+              }
             </div>
           </div>
           <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.6; margin-bottom: 1rem;">{p.description}</p>
